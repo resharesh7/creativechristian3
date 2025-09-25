@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Creative Christian Learning Center</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #263238;
+      --muted: #546e7a;
+      --accent: #ff7a59;
+      --accent-2: #4caf50;
+      --card: #f7fafc;
+      --border: #e2e8f0;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background: #ffffffcc;
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .brand { font-weight: bold; font-size: 1.2rem; }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      padding: 0.5rem;
+      border-radius: 6px;
+    }
+    nav a:hover {
+      background: var(--card);
+    }
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 2rem;
+      background: linear-gradient(120deg, #e8f5e9, #fff);
+    }
+    .hero-content {
+      max-width: 600px;
+    }
+    .hero-icons img {
+      width: 60px;
+      margin: 0.5rem;
+    }
+    .button {
+      display: inline-block;
+      padding: 0.6rem 1rem;
+      margin: 0.5rem 0;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .button:hover {
+      background: #ff6a45;
+    }
+    section {
+      padding: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    h2 {
+      margin-top: 0;
+    }
+    form {
+      display: grid;
+      gap: 1rem;
+      max-width: 500px;
+    }
+    input, select {
+      padding: 0.5rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+    .pencil-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: white;
+      border: 2px solid var(--accent);
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      font-size: 1.5rem;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">🎨✝️ Creative Christian Learning Center</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#enroll">K–5 Enrollment</a></li>
+        <li><a href="#waitlist">Waitlist</a></li>
+        <li><a href="#scholarship">Scholarships</a></li>
+        <li><a href="#middle">6–8 Leadership</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Where faith, creativity, and learning come together</h1>
+      <p>We nurture young minds through Christ-centered education, hands-on creativity, and a joyful love of learning.</p>
+      <a class="button" href="#enroll">Enroll K–5</a>
+      <a class="button" href="#middle">6–8 Leadership</a>
+    </div>
+    <div class="hero-icons">
+      <img src="icons/ruler.png" alt="Ruler">
+      <img src="icons/apple.png" alt="Apple">
+      <img src="icons/books.png" alt="Books">
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Mrs. Tiphany Richardson</h2>
+    <p>Mrs. Richardson founded Creative Christian Learning Center with a mission to help children flourish through faith, creativity, and excellence. With years of experience in education and ministry, she believes every child is uniquely gifted and deserves a safe, inspiring space to learn and grow.</p>
+  </section>
+
+  <section id="enroll">
+    <h2>K–5 Enrollment</h2>
+    <form name="k5-enroll" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="k5-enroll" />
+      <input type="text" name="parentName" placeholder="Parent Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="tel" name="phone" placeholder="Phone Number" required />
+      <input type="number" name="childAge" placeholder="Child Age" required />
+      <input type="text" name="childGrade" placeholder="Child Grade" required />
+      <button type="submit" class="button">Enroll Now</button>
+    </form>
+  </section>
+
+  <section id="waitlist">
+    <h2>Join the Waitlist</h2>
+    <form name="k5-waitlist" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="k5-waitlist" />
+      <input type="text" name="firstName" placeholder="First Name" required />
+      <input type="text" name="lastName" placeholder="Last Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="tel" name="phone" placeholder="Phone Number" required />
+      <input type="number" name="childAge" placeholder="Child Age" required />
+      <input type="date" name="startDate" required />
+      <button type="submit" class="button">Join Waitlist</button>
+    </form>
+  </section>
+
+  <section id="scholarship">
+    <h2>Step Up For Students Scholarships</h2>
+    <p>We encourage eligible K–5 families to apply for the UA or PEP Scholarship programs to help fund your child's education.</p>
+    <a class="button" href="https://www.stepupforstudents.org/scholarships/" target="_blank">Apply for Scholarship</a>
+  </section>
+
+  <section id="middle">
+    <h2>Leadership & Investing (Grades 6–8)</h2>
+    <p>This self-study program equips students with leadership skills and foundational investing knowledge. Open enrollment now available.</p>
+    <form name="middle-enroll" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="middle-enroll" />
+      <input type="text" name="parentName" placeholder="Parent Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="tel" name="phone" placeholder="Phone Number" required />
+      <input type="number" name="childAge" placeholder="Child Age" required />
+      <button type="submit" class="button">Enroll</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Creative Christian Learning Center</p>
+  </footer>
+
+  <div class="pencil-toggle" title="Toggle Accent">✏️</div>
+
+  <script>
+    document.querySelector('.pencil-toggle').addEventListener('click', ()
