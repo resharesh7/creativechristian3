@@ -1,209 +1,427 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Creative Christian Learning Center</title>
+  <meta name="description" content="Creative Christian Learning Center - professional, playful, and inviting school site." />
   <style>
-    :root {
-      --bg: #ffffff;
-      --text: #263238;
-      --muted: #546e7a;
-      --accent: #ff7a59;
-      --accent-2: #4caf50;
-      --card: #f7fafc;
-      --border: #e2e8f0;
+    :root{
+      --bg: #fffdf9;
+      --card: #ffffff;
+      --text: #23323f;
+      --muted: #68707a;
+      --accent: #f59e0b; /* amber */
+      --accent-2: #ef476f; /* pink */
+      --accent-3: #34d399; /* green */
+      --glass: rgba(255,255,255,0.7);
+      --radius: 14px;
+      --shadow: 0 6px 20px rgba(34,50,63,0.12);
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
     }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#f7fbff 0%, #fffdf9 100%);color:var(--text)}
+    header{position:sticky;top:0;backdrop-filter:blur(6px);background:rgba(255,255,255,0.6);border-bottom:1px solid rgba(0,0,0,0.04);z-index:90}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+
+    /* NAV */
+    .nav{display:flex;align-items:center;gap:16px;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:var(--shadow);color:white;font-weight:700}
+    .nav-links{display:flex;gap:10px}
+    .nav-links a{padding:8px 12px;border-radius:10px;text-decoration:none;color:var(--text);font-weight:600}
+    .nav-links a.active{background:linear-gradient(90deg, rgba(245,158,11,0.12), rgba(239,71,111,0.06));}
+    .cta{display:flex;gap:8px}
+    .pencil-toggle{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:2px dashed rgba(0,0,0,0.06);cursor:pointer}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:48px 0}
+    .lead{background:var(--card);padding:28px;border-radius:18px;box-shadow:var(--shadow)}
+    h1{margin:0;font-size:28px}
+    p.lead-desc{color:var(--muted);margin-top:10px}
+    .icons-row{display:flex;gap:12px;margin-top:18px}
+    .badge{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:12px;background:linear-gradient(90deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4));box-shadow:inset 0 -2px 6px rgba(0,0,0,0.02)}
+    .hero-card{padding:18px;border-radius:14px;background:linear-gradient(180deg,#fff,#f9fbff);box-shadow:var(--shadow)}
+
+    /* sections */
+    section{padding:40px 0}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--card);padding:18px;border-radius:14px;box-shadow:var(--shadow)}
+
+    /* forms */
+    form{display:grid;gap:10px}
+    label{font-size:13px;color:var(--muted)}
+    input,select,textarea{padding:10px;border-radius:10px;border:1px solid rgba(34,50,63,0.06);font-size:15px}
+    .row{display:flex;gap:10px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;border:none;background:var(--accent);color:white;font-weight:700;cursor:pointer}
+    .btn.secondary{background:var(--accent-2)}
+    .btn.ghost{background:transparent;border:1px solid rgba(34,50,63,0.06);color:var(--text)}
+
+    /* scholarship button */
+    .scholarship-cta{display:flex;gap:12px;align-items:center}
+
+    /* about */
+    .about{display:flex;gap:18px;align-items:center}
+    .avatar{width:120px;height:120px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent-2),var(--accent-3));color:white;font-size:20px;font-weight:700}
+
+    /* footer */
+    footer{padding:28px 0;color:var(--muted);font-size:14px}
+
+    /* mobile */
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr;}
+      .grid-3{grid-template-columns:1fr}
+      .nav-links{display:none}
+      .container{padding:16px}
     }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem;
-      background: #ffffffcc;
-      backdrop-filter: blur(6px);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    .brand { font-weight: bold; font-size: 1.2rem; }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-      margin: 0;
-      padding: 0;
-    }
-    nav a {
-      text-decoration: none;
-      color: var(--text);
-      padding: 0.5rem;
-      border-radius: 6px;
-    }
-    nav a:hover {
-      background: var(--card);
-    }
-    .hero {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      padding: 2rem;
-      background: linear-gradient(120deg, #e8f5e9, #fff);
-    }
-    .hero-content {
-      max-width: 600px;
-    }
-    .hero-icons img {
-      width: 60px;
-      margin: 0.5rem;
-    }
-    .button {
-      display: inline-block;
-      padding: 0.6rem 1rem;
-      margin: 0.5rem 0;
-      background: var(--accent);
-      color: white;
-      border: none;
-      border-radius: 999px;
-      cursor: pointer;
-      text-decoration: none;
-    }
-    .button:hover {
-      background: #ff6a45;
-    }
-    section {
-      padding: 2rem;
-      border-bottom: 1px solid var(--border);
-    }
-    h2 {
-      margin-top: 0;
-    }
-    form {
-      display: grid;
-      gap: 1rem;
-      max-width: 500px;
-    }
-    input, select {
-      padding: 0.5rem;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      color: var(--muted);
-      border-top: 1px solid var(--border);
-    }
-    .pencil-toggle {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: white;
-      border: 2px solid var(--accent);
-      border-radius: 50%;
-      width: 48px;
-      height: 48px;
-      font-size: 1.5rem;
-      display: grid;
-      place-items: center;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
+
+    /* animations & playful touches */
+    .float{animation:floaty 6s ease-in-out infinite}
+    @keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
+    .pop:hover{transform:translateY(-6px) scale(1.02);transition:transform .25s}
+    .pulse{animation:pulse 2.6s infinite}
+    @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.03)}100%{transform:scale(1)}}
+
+    /* small helpers */
+    .muted{color:var(--muted)}
+    .center{display:grid;place-items:center}
+    .hidden{display:none}
+    .pill{padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--accent-3));color:white;font-weight:700}
+
+    /* validation message */
+    .msg{padding:10px;border-radius:10px;background:#e6fff2;color:#04563a;border:1px solid rgba(4,86,58,0.08)}
   </style>
 </head>
 <body>
-
   <header>
-    <div class="brand">🎨✝️ Creative Christian Learning Center</div>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#enroll">K–5 Enrollment</a></li>
-        <li><a href="#waitlist">Waitlist</a></li>
-        <li><a href="#scholarship">Scholarships</a></li>
-        <li><a href="#middle">6–8 Leadership</a></li>
-      </ul>
-    </nav>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden>CC</div>
+        <div>
+          <div style="font-weight:800">Creative Christian</div>
+          <div style="font-size:13px;color:var(--muted);margin-top:2px">Learning Center</div>
+        </div>
+      </div>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#home" data-link="home" class="active">Home</a>
+        <a href="#enroll" data-link="enroll">Enroll</a>
+        <a href="#scholarships" data-link="scholarships">Scholarships</a>
+        <a href="#middle" data-link="middle">Middle School</a>
+      </nav>
+      <div class="cta">
+        <div class="pencil-toggle" id="pencilToggle" title="Theme / Pencil Toggle">✏️</div>
+        <a class="btn ghost" href="#enroll">Get Started</a>
+      </div>
+    </div>
   </header>
 
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <h1>Where faith, creativity, and learning come together</h1>
-      <p>We nurture young minds through Christ-centered education, hands-on creativity, and a joyful love of learning.</p>
-      <a class="button" href="#enroll">Enroll K–5</a>
-      <a class="button" href="#middle">6–8 Leadership</a>
+  <main class="container">
+    <!-- HOME -->
+    <section id="home" class="home-section">
+      <div class="hero">
+        <div class="lead card">
+          <h1>Welcome to Creative Christian Learning Center</h1>
+          <p class="lead-desc">A safe, joyful, and faith-centered environment where K-8 students grow academically and spiritually. Professional, playful, and parent-friendly.</p>
+
+          <div class="icons-row">
+            <div class="badge pop float" title="Ruler">
+              <!-- ruler svg -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 21V3h18v18H3z" stroke="white" stroke-opacity="0.12"/><path d="M4 5v14h16V5H4zm3 3v4" stroke="white"/></svg>
+              <div style="font-weight:700">Creative Play</div>
+            </div>
+            <div class="badge pop float" title="Apple">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="8" fill="white"/></svg>
+              <div style="font-weight:700">Nurturing Care</div>
+            </div>
+            <div class="badge pop float" title="Books">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="18" height="16" rx="2" fill="white"/></svg>
+              <div style="font-weight:700">Strong Academics</div>
+            </div>
+          </div>
+
+          <div style="margin-top:18px;display:flex;gap:10px;align-items:center">
+            <span class="pill">K - 8</span>
+            <div class="muted"> learning • Faith-centered values • Small class sizes</div>
+          </div>
+        </div>
+
+        <aside class="hero-card card">
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <strong>Open Enrollment</strong>
+              <span class="muted">Spots limited</span>
+            </div>
+            <div class="muted">Learn more about enrollment, scholarships, and our middle school track.</div>
+            <div style="display:flex;gap:8px;margin-top:14px">
+              <a class="btn" href="#enroll">Enroll Now</a>
+              <a class="btn secondary" href="#scholarships">Scholarships</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ENROLL -->
+    <section id="enroll" class="enroll-section">
+      <div class="card">
+        <h2>Enroll (K - 5)</h2>
+        <p class="muted">Complete the form below to enroll your child or join the waitlist. We will contact you after submission.</p>
+        <form id="enrollForm">
+          <div class="row">
+            <div style="flex:1">
+              <label for="parentName">Parent Full Name</label>
+              <input id="parentName" name="parentName" placeholder="First Last" required />
+            </div>
+            <div style="width:200px">
+              <label for="phone">Phone #</label>
+              <input id="phone" name="phone" type="tel" placeholder="(555) 555-5555" required />
+            </div>
+          </div>
+          <div class="row">
+            <div style="flex:1">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="parent@example.com" required />
+            </div>
+            <div style="width:220px">
+              <label for="grade">Child Grade</label>
+              <select id="grade" name="grade" required>
+                <option value="">Select</option>
+                <option>Pre-K</option>
+                <option>Kinder</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div style="flex:1">
+              <label for="childAge">Child Age</label>
+              <input id="childAge" name="childAge" type="number" min="2" max="18" placeholder="Age" required />
+            </div>
+            <div style="width:220px">
+              <label for="startDate">Anticipated Start Date</label>
+              <input id="startDate" name="startDate" type="date" />
+            </div>
+          </div>
+
+          <div style="display:flex;gap:10px;align-items:center;margin-top:6px">
+            <label style="display:flex;gap:8px;align-items:center"><input type="checkbox" id="waitlistCheck"/> Add to Waitlist if full</label>
+            <span class="muted">We'll contact you with next steps.</span>
+          </div>
+
+          <div style="margin-top:12px;display:flex;gap:10px">
+            <button type="submit" class="btn">Submit Enrollment</button>
+            <button type="button" id="openWaitlist" class="btn ghost">Open Waitlist Form</button>
+          </div>
+          <div id="enrollMsg" class="hidden" style="margin-top:10px"></div>
+        </form>
+      </div>
+
+      <div style="height:18px"></div>
+
+      <!-- Waitlist form (separate box) -->
+      <div class="card" id="waitlistCard">
+        <h3>Waitlist / Additional Info</h3>
+        <p class="muted">If you prefer a direct waitlist entry, complete this form.</p>
+        <form id="waitlistForm">
+          <div class="row">
+            <div style="flex:1">
+              <label for="wFirst">First Name</label>
+              <input id="wFirst" name="wFirst" required />
+            </div>
+            <div style="flex:1">
+              <label for="wLast">Last Name</label>
+              <input id="wLast" name="wLast" required />
+            </div>
+          </div>
+          <div class="row">
+            <div style="flex:1">
+              <label for="wEmail">Email</label>
+              <input id="wEmail" name="wEmail" type="email" required />
+            </div>
+            <div style="width:200px">
+              <label for="wPhone">Phone #</label>
+              <input id="wPhone" name="wPhone" type="tel" required />
+            </div>
+          </div>
+          <div class="row">
+            <div style="flex:1">
+              <label for="wChildAge">Child Age</label>
+              <input id="wChildAge" name="wChildAge" type="number" placeholder="Age" required />
+            </div>
+            <div style="width:220px">
+              <label for="wStart">Anticipated Start Date</label>
+              <input id="wStart" name="wStart" type="date" />
+            </div>
+          </div>
+          <div style="margin-top:12px">
+            <button class="btn" type="submit">Join Waitlist</button>
+          </div>
+          <div id="waitlistMsg" class="hidden" style="margin-top:10px"></div>
+        </form>
+      </div>
+    </section>
+
+    <!-- SCHOLARSHIPS -->
+    <section id="scholarships" class="scholarships-section">
+      <div class="card">
+        <h2>Scholarships (K - 5)</h2>
+        <p class="muted">We partner with Step Up For Students scholarship programs. The scholarship button below opens the Step Up For Students scholarship page (K-5).</p>
+        <div style="display:flex;gap:12px;align-items:center;margin-top:12px">
+          <a class="btn secondary" href="https://www.stepupforstudents.org/scholarships/" target="_blank" rel="noopener noreferrer">Apply for Step Up For Students Scholarships (K - 5)</a>
+          <div class="muted">Opens new tab</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MIDDLE SCHOOL -->
+    <section id="middle" class="middle-section">
+      <div class="card">
+        <h2>Middle School (Grades 6 - 8)</h2>
+        <p class="muted">Open enrollment for a self-study program: <strong>Leadership Development & Investing Strategies</strong>. Designed for motivated middle schoolers to learn life skills, leadership, and basics of personal finance & investing.</p>
+        <form id="middleForm" style="margin-top:12px">
+          <div class="row">
+            <div style="flex:1">
+              <label for="mName">Parent / Guardian Name</label>
+              <input id="mName" name="mName" required />
+            </div>
+            <div style="width:220px">
+              <label for="mPhone">Phone</label>
+              <input id="mPhone" name="mPhone" type="tel" required />
+            </div>
+          </div>
+          <div class="row">
+            <div style="flex:1">
+              <label for="mEmail">Email</label>
+              <input id="mEmail" name="mEmail" type="email" required />
+            </div>
+            <div style="width:200px">
+              <label for="mGrade">Child Grade</label>
+              <select id="mGrade" name="mGrade" required>
+                <option value="">Select</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+              </select>
+            </div>
+          </div>
+          <div style="margin-top:12px">
+            <button class="btn" type="submit">Enroll in Middle Program</button>
+          </div>
+          <div id="middleMsg" class="hidden" style="margin-top:10px"></div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about-section">
+      <div class="card about">
+        <div class="avatar">TR</div>
+        <div>
+          <h3>About Mrs. Tiphany Richardson</h3>
+          <p class="muted">Mrs. Tiphany Richardson is the founder and director of Creative Christian Learning Center. With years of experience in early childhood education and a heart for faith-based learning, Mrs. Richardson focuses on building confident, curious learners who are prepared for life and leadership.</p>
+          <p class="muted">Her approach combines play-based learning, strong academic foundations, and character development rooted in Christian values.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div class="muted">© <span id="year"></span> Creative Christian Learning Center — All rights reserved.</div>
+        <div class="muted">Contact: (555) 555-5555 • info@creativechristian.example</div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- modal for submission -->
+  <div id="modal" class="hidden" style="position:fixed;left:0;top:0;right:0;bottom:0;display:grid;place-items:center;background:rgba(0,0,0,0.35);z-index:999">
+    <div style="background:white;padding:20px;border-radius:14px;max-width:420px;width:92%;text-align:center;box-shadow:var(--shadow)">
+      <div id="modalMsg">Thanks — form submitted.</div>
+      <div style="margin-top:12px"><button id="closeModal" class="btn">Close</button></div>
     </div>
-    <div class="hero-icons">
-      <img src="icons/ruler.png" alt="Ruler">
-      <img src="icons/apple.png" alt="Apple">
-      <img src="icons/books.png" alt="Books">
-    </div>
-  </section>
-
-  <section id="about">
-    <h2>About Mrs. Tiphany Richardson</h2>
-    <p>Mrs. Richardson founded Creative Christian Learning Center with a mission to help children flourish through faith, creativity, and excellence. With years of experience in education and ministry, she believes every child is uniquely gifted and deserves a safe, inspiring space to learn and grow.</p>
-  </section>
-
-  <section id="enroll">
-    <h2>K–5 Enrollment</h2>
-    <form name="k5-enroll" method="POST" data-netlify="true">
-      <input type="hidden" name="form-name" value="k5-enroll" />
-      <input type="text" name="parentName" placeholder="Parent Name" required />
-      <input type="email" name="email" placeholder="Email" required />
-      <input type="tel" name="phone" placeholder="Phone Number" required />
-      <input type="number" name="childAge" placeholder="Child Age" required />
-      <input type="text" name="childGrade" placeholder="Child Grade" required />
-      <button type="submit" class="button">Enroll Now</button>
-    </form>
-  </section>
-
-  <section id="waitlist">
-    <h2>Join the Waitlist</h2>
-    <form name="k5-waitlist" method="POST" data-netlify="true">
-      <input type="hidden" name="form-name" value="k5-waitlist" />
-      <input type="text" name="firstName" placeholder="First Name" required />
-      <input type="text" name="lastName" placeholder="Last Name" required />
-      <input type="email" name="email" placeholder="Email" required />
-      <input type="tel" name="phone" placeholder="Phone Number" required />
-      <input type="number" name="childAge" placeholder="Child Age" required />
-      <input type="date" name="startDate" required />
-      <button type="submit" class="button">Join Waitlist</button>
-    </form>
-  </section>
-
-  <section id="scholarship">
-    <h2>Step Up For Students Scholarships</h2>
-    <p>We encourage eligible K–5 families to apply for the UA or PEP Scholarship programs to help fund your child's education.</p>
-    <a class="button" href="https://www.stepupforstudents.org/scholarships/" target="_blank">Apply for Scholarship</a>
-  </section>
-
-  <section id="middle">
-    <h2>Leadership & Investing (Grades 6–8)</h2>
-    <p>This self-study program equips students with leadership skills and foundational investing knowledge. Open enrollment now available.</p>
-    <form name="middle-enroll" method="POST" data-netlify="true">
-      <input type="hidden" name="form-name" value="middle-enroll" />
-      <input type="text" name="parentName" placeholder="Parent Name" required />
-      <input type="email" name="email" placeholder="Email" required />
-      <input type="tel" name="phone" placeholder="Phone Number" required />
-      <input type="number" name="childAge" placeholder="Child Age" required />
-      <button type="submit" class="button">Enroll</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Creative Christian Learning Center</p>
-  </footer>
-
-  <div class="pencil-toggle" title="Toggle Accent">✏️</div>
+  </div>
 
   <script>
-    document.querySelector('.pencil-toggle').addEventListener('click', ()
+    // utils
+    const qs = s => document.querySelector(s);
+    const qsa = s => document.querySelectorAll(s);
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // navigation handling - anchors update URL hash and active link
+    function setActive(link){
+      qsa('.nav-links a').forEach(a=>a.classList.remove('active'));
+      const el = qs('.nav-links a[data-link="'+link+'"]');
+      if(el) el.classList.add('active');
+    }
+    function showSectionFromHash(){
+      const hash = (location.hash||'#home').replace('#','');
+      // scroll to the section smoothly
+      const section = document.getElementById(hash) || document.getElementById('home');
+      section.scrollIntoView({behavior:'smooth',block:'start'});
+      setActive(hash);
+    }
+    window.addEventListener('hashchange', showSectionFromHash);
+    window.addEventListener('load', ()=>{
+      showSectionFromHash();
+    });
+
+    // pencil toggle - toggles accent palette
+    const pencil = document.getElementById('pencilToggle');
+    let accentIndex = 0;
+    const accents = ['#f59e0b','#ef476f','#34d399','#3b82f6'];
+    pencil.addEventListener('click', ()=>{
+      accentIndex = (accentIndex+1) % accents.length;
+      document.documentElement.style.setProperty('--accent', accents[accentIndex]);
+      // playful animation
+      pencil.animate([{transform:'rotate(0deg)'},{transform:'rotate(-12deg)'},{transform:'rotate(8deg)'},{transform:'rotate(0deg)'}],{duration:600});
+    });
+
+    // forms - prevent real submit, show modal
+    function fakeSubmit(form, msgEl, successMsg){
+      form.addEventListener('submit', e=>{
+        e.preventDefault();
+        msgEl.classList.remove('hidden');
+        msgEl.classList.add('msg');
+        msgEl.textContent = successMsg;
+        // show modal
+        qs('#modal').classList.remove('hidden');
+        // simulate sending ... in real life you'd POST to server or use Netlify forms
+      });
+    }
+    fakeSubmit(qs('#enrollForm'), qs('#enrollMsg'), 'Enrollment submitted! We will contact you soon.');
+    fakeSubmit(qs('#waitlistForm'), qs('#waitlistMsg'), 'You are on the waitlist. We will reach out.');
+    fakeSubmit(qs('#middleForm'), qs('#middleMsg'), 'Middle school enrollment received!');
+
+    qs('#closeModal').addEventListener('click', ()=>{qs('#modal').classList.add('hidden')});
+
+    // open waitlist button
+    qs('#openWaitlist').addEventListener('click', ()=>{
+      location.hash = 'enroll';
+      setTimeout(()=>{
+        document.getElementById('waitlistCard').scrollIntoView({behavior:'smooth'});
+      },120);
+    });
+
+    // small accessibility: focus outlines for keyboard users
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 'Tab') document.body.style.scrollBehavior = 'smooth';
+    });
+
+    // Make sure clicking nav links updates active state quickly
+    qsa('.nav-links a').forEach(a=>{
+      a.addEventListener('click', (ev)=>{
+        ev.preventDefault();
+        const h = a.getAttribute('href');
+        history.pushState(null,'',h);
+        showSectionFromHash();
+      });
+    });
+
+    // responsive small tweak: show nav on mobile by toggling
+    // (kept minimal to stay single-file)
+  </script>
+</body>
+</html>
