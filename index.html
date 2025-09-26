@@ -11,9 +11,9 @@
       --card: #ffffff;
       --text: #23323f;
       --muted: #68707a;
-      --accent: #f59e0b; /* amber */
-      --accent-2: #ef476f; /* pink */
-      --accent-3: #34d399; /* green */
+      --accent: #f59e0b;
+      --accent-2: #ef476f;
+      --accent-3: #34d399;
       --glass: rgba(255,255,255,0.7);
       --radius: 14px;
       --shadow: 0 6px 20px rgba(34,50,63,0.12);
@@ -23,8 +23,6 @@
     html,body{height:100%;margin:0;background:linear-gradient(180deg,#f7fbff 0%, #fffdf9 100%);color:var(--text)}
     header{position:sticky;top:0;backdrop-filter:blur(6px);background:rgba(255,255,255,0.6);border-bottom:1px solid rgba(0,0,0,0.04);z-index:90}
     .container{max-width:1100px;margin:0 auto;padding:24px}
-
-    /* NAV */
     .nav{display:flex;align-items:center;gap:16px;justify-content:space-between}
     .brand{display:flex;align-items:center;gap:12px}
     .logo{width:56px;height:56px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:var(--shadow);color:white;font-weight:700}
@@ -33,8 +31,6 @@
     .nav-links a.active{background:linear-gradient(90deg, rgba(245,158,11,0.12), rgba(239,71,111,0.06));}
     .cta{display:flex;gap:8px}
     .pencil-toggle{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:2px dashed rgba(0,0,0,0.06);cursor:pointer}
-
-    /* Hero */
     .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:48px 0}
     .lead{background:var(--card);padding:28px;border-radius:18px;box-shadow:var(--shadow)}
     h1{margin:0;font-size:28px}
@@ -42,13 +38,9 @@
     .icons-row{display:flex;gap:12px;margin-top:18px}
     .badge{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:12px;background:linear-gradient(90deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4));box-shadow:inset 0 -2px 6px rgba(0,0,0,0.02)}
     .hero-card{padding:18px;border-radius:14px;background:linear-gradient(180deg,#fff,#f9fbff);box-shadow:var(--shadow)}
-
-    /* sections */
     section{padding:40px 0}
     .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .card{background:var(--card);padding:18px;border-radius:14px;box-shadow:var(--shadow)}
-
-    /* forms */
     form{display:grid;gap:10px}
     label{font-size:13px;color:var(--muted)}
     input,select,textarea{padding:10px;border-radius:10px;border:1px solid rgba(34,50,63,0.06);font-size:15px}
@@ -56,39 +48,25 @@
     .btn{display:inline-block;padding:10px 14px;border-radius:10px;border:none;background:var(--accent);color:white;font-weight:700;cursor:pointer}
     .btn.secondary{background:var(--accent-2)}
     .btn.ghost{background:transparent;border:1px solid rgba(34,50,63,0.06);color:var(--text)}
-
-    /* scholarship button */
     .scholarship-cta{display:flex;gap:12px;align-items:center}
-
-    /* about */
     .about{display:flex;gap:18px;align-items:center}
     .avatar{width:120px;height:120px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent-2),var(--accent-3));color:white;font-size:20px;font-weight:700}
-
-    /* footer */
     footer{padding:28px 0;color:var(--muted);font-size:14px}
-
-    /* mobile */
     @media (max-width:880px){
       .hero{grid-template-columns:1fr;}
       .grid-3{grid-template-columns:1fr}
       .nav-links{display:none}
       .container{padding:16px}
     }
-
-    /* animations & playful touches */
     .float{animation:floaty 6s ease-in-out infinite}
     @keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
     .pop:hover{transform:translateY(-6px) scale(1.02);transition:transform .25s}
     .pulse{animation:pulse 2.6s infinite}
     @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.03)}100%{transform:scale(1)}}
-
-    /* small helpers */
     .muted{color:var(--muted)}
     .center{display:grid;place-items:center}
     .hidden{display:none}
     .pill{padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--accent-3));color:white;font-weight:700}
-
-    /* validation message */
     .msg{padding:10px;border-radius:10px;background:#e6fff2;color:#04563a;border:1px solid rgba(4,86,58,0.08)}
   </style>
 </head>
@@ -116,16 +94,13 @@
   </header>
 
   <main class="container">
-    <!-- HOME -->
     <section id="home" class="home-section">
       <div class="hero">
         <div class="lead card">
           <h1>Welcome to Creative Christian Learning Center</h1>
           <p class="lead-desc">A safe, joyful, and faith-centered environment where K-8 students grow academically and spiritually. Professional, playful, and parent-friendly.</p>
-
           <div class="icons-row">
             <div class="badge pop float" title="Ruler">
-              <!-- ruler svg -->
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 21V3h18v18H3z" stroke="white" stroke-opacity="0.12"/><path d="M4 5v14h16V5H4zm3 3v4" stroke="white"/></svg>
               <div style="font-weight:700">Creative Play</div>
             </div>
@@ -138,10 +113,9 @@
               <div style="font-weight:700">Strong Academics</div>
             </div>
           </div>
-
           <div style="margin-top:18px;display:flex;gap:10px;align-items:center">
             <span class="pill">K - 8</span>
-            <div class="muted"> learning • Faith-centered values • Small class sizes</div>
+            <div class="muted">Play-based learning • Faith-centered values • Small class sizes</div>
           </div>
         </div>
 
@@ -161,7 +135,6 @@
       </div>
     </section>
 
-    <!-- ENROLL -->
     <section id="enroll" class="enroll-section">
       <div class="card">
         <h2>Enroll (K - 5)</h2>
@@ -222,7 +195,6 @@
 
       <div style="height:18px"></div>
 
-      <!-- Waitlist form (separate box) -->
       <div class="card" id="waitlistCard">
         <h3>Waitlist / Additional Info</h3>
         <p class="muted">If you prefer a direct waitlist entry, complete this form.</p>
@@ -265,7 +237,6 @@
       </div>
     </section>
 
-    <!-- SCHOLARSHIPS -->
     <section id="scholarships" class="scholarships-section">
       <div class="card">
         <h2>Scholarships (K - 5)</h2>
@@ -277,7 +248,6 @@
       </div>
     </section>
 
-    <!-- MIDDLE SCHOOL -->
     <section id="middle" class="middle-section">
       <div class="card">
         <h2>Middle School (Grades 6 - 8)</h2>
@@ -316,7 +286,6 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
     <section id="about" class="about-section">
       <div class="card about">
         <div class="avatar">TR</div>
@@ -338,90 +307,114 @@
 
   <!-- modal for submission -->
   <div id="modal" class="hidden" style="position:fixed;left:0;top:0;right:0;bottom:0;display:grid;place-items:center;background:rgba(0,0,0,0.35);z-index:999">
-    <div style="background:white;padding:20px;border-radius:14px;max-width:420px;width:92%;text-align:center;box-shadow:var(--shadow)">
+    <div style="background:white;padding:20px;border-radius:14px;max-width:420px;width:92%;text-align:center;box-shadow:var(--shadow);position:relative">
       <div id="modalMsg">Thanks — form submitted.</div>
       <div style="margin-top:12px"><button id="closeModal" class="btn">Close</button></div>
     </div>
   </div>
 
   <script>
-    // utils
-    const qs = s => document.querySelector(s);
-    const qsa = s => document.querySelectorAll(s);
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.addEventListener('DOMContentLoaded', function(){
+      const qs = s => document.querySelector(s);
+      const qsa = s => document.querySelectorAll(s);
 
-    // navigation handling - anchors update URL hash and active link
-    function setActive(link){
-      qsa('.nav-links a').forEach(a=>a.classList.remove('active'));
-      const el = qs('.nav-links a[data-link="'+link+'"]');
-      if(el) el.classList.add('active');
-    }
-    function showSectionFromHash(){
-      const hash = (location.hash||'#home').replace('#','');
-      // scroll to the section smoothly
-      const section = document.getElementById(hash) || document.getElementById('home');
-      section.scrollIntoView({behavior:'smooth',block:'start'});
-      setActive(hash);
-    }
-    window.addEventListener('hashchange', showSectionFromHash);
-    window.addEventListener('load', ()=>{
+      // Safely set year if element exists
+      const yearEl = document.getElementById('year');
+      if(yearEl) yearEl.textContent = new Date().getFullYear();
+
+      // navigation handling - anchors update URL hash and active link
+      function setActive(link){
+        qsa('.nav-links a').forEach(a=>a.classList.remove('active'));
+        const el = qs('.nav-links a[data-link="'+link+'"]');
+        if(el) el.classList.add('active');
+      }
+      function showSectionFromHash(){
+        const hash = (location.hash||'#home').replace('#','');
+        const section = document.getElementById(hash) || document.getElementById('home');
+        if(section && typeof section.scrollIntoView === 'function'){
+          section.scrollIntoView({behavior:'smooth',block:'start'});
+        }
+        setActive(hash);
+      }
+      window.addEventListener('hashchange', showSectionFromHash);
+      // show initial
       showSectionFromHash();
-    });
 
-    // pencil toggle - toggles accent palette
-    const pencil = document.getElementById('pencilToggle');
-    let accentIndex = 0;
-    const accents = ['#f59e0b','#ef476f','#34d399','#3b82f6'];
-    pencil.addEventListener('click', ()=>{
-      accentIndex = (accentIndex+1) % accents.length;
-      document.documentElement.style.setProperty('--accent', accents[accentIndex]);
-      // playful animation
-      pencil.animate([{transform:'rotate(0deg)'},{transform:'rotate(-12deg)'},{transform:'rotate(8deg)'},{transform:'rotate(0deg)'}],{duration:600});
-    });
+      // pencil toggle - toggles accent palette
+      const pencil = document.getElementById('pencilToggle');
+      let accentIndex = 0;
+      const accents = ['#f59e0b','#ef476f','#34d399','#3b82f6'];
+      if(pencil){
+        pencil.addEventListener('click', ()=>{
+          accentIndex = (accentIndex+1) % accents.length;
+          document.documentElement.style.setProperty('--accent', accents[accentIndex]);
+          pencil.animate([{transform:'rotate(0deg)'},{transform:'rotate(-12deg)'},{transform:'rotate(8deg)'},{transform:'rotate(0deg)'}],{duration:600});
+        });
+      }
 
-    // forms - prevent real submit, show modal
-    function fakeSubmit(form, msgEl, successMsg){
-      form.addEventListener('submit', e=>{
-        e.preventDefault();
-        msgEl.classList.remove('hidden');
-        msgEl.classList.add('msg');
-        msgEl.textContent = successMsg;
-        // show modal
-        qs('#modal').classList.remove('hidden');
-        // simulate sending ... in real life you'd POST to server or use Netlify forms
+      // forms - prevent real submit, show modal, clear fields, and auto-hide
+      function fakeSubmit(form, msgEl, successMsg){
+        if(!form) return;
+        form.addEventListener('submit', e=>{
+          e.preventDefault();
+          if(msgEl){
+            msgEl.classList.remove('hidden');
+            msgEl.classList.add('msg');
+            msgEl.textContent = successMsg;
+          }
+          const modal = qs('#modal');
+          if(modal) modal.classList.remove('hidden');
+          try{ form.reset(); }catch(err){}
+
+          // Hide message and modal after 4 seconds
+          setTimeout(()=>{
+            if(modal) modal.classList.add('hidden');
+            if(msgEl){
+              msgEl.classList.add('hidden');
+              msgEl.classList.remove('msg');
+            }
+          },4000);
+        });
+      }
+
+      fakeSubmit(qs('#enrollForm'), qs('#enrollMsg'), 'Enrollment submitted! We will contact you soon.');
+      fakeSubmit(qs('#waitlistForm'), qs('#waitlistMsg'), 'You are on the waitlist. We will reach out.');
+      fakeSubmit(qs('#middleForm'), qs('#middleMsg'), 'Middle school enrollment received!');
+
+      const closeModal = qs('#closeModal');
+      if(closeModal) closeModal.addEventListener('click', ()=>{ const modal = qs('#modal'); if(modal) modal.classList.add('hidden'); });
+
+      // open waitlist button
+      const openWL = qs('#openWaitlist');
+      if(openWL){
+        openWL.addEventListener('click', ()=>{
+          location.hash = 'enroll';
+          setTimeout(()=>{
+            const waitCard = document.getElementById('waitlistCard');
+            if(waitCard) waitCard.scrollIntoView({behavior:'smooth'});
+          },120);
+        });
+      }
+
+      // small accessibility: focus outlines for keyboard users
+      document.addEventListener('keydown', (e)=>{
+        if(e.key === 'Tab') document.body.style.scrollBehavior = 'smooth';
       });
-    }
-    fakeSubmit(qs('#enrollForm'), qs('#enrollMsg'), 'Enrollment submitted! We will contact you soon.');
-    fakeSubmit(qs('#waitlistForm'), qs('#waitlistMsg'), 'You are on the waitlist. We will reach out.');
-    fakeSubmit(qs('#middleForm'), qs('#middleMsg'), 'Middle school enrollment received!');
 
-    qs('#closeModal').addEventListener('click', ()=>{qs('#modal').classList.add('hidden')});
+      // nav links behavior
+      const navLinks = qsa('.nav-links a');
+      if(navLinks && navLinks.length){
+        navLinks.forEach(a=>{
+          a.addEventListener('click', (ev)=>{
+            ev.preventDefault();
+            const h = a.getAttribute('href');
+            history.pushState(null,'',h);
+            showSectionFromHash();
+          });
+        });
+      }
 
-    // open waitlist button
-    qs('#openWaitlist').addEventListener('click', ()=>{
-      location.hash = 'enroll';
-      setTimeout(()=>{
-        document.getElementById('waitlistCard').scrollIntoView({behavior:'smooth'});
-      },120);
     });
-
-    // small accessibility: focus outlines for keyboard users
-    document.addEventListener('keydown', (e)=>{
-      if(e.key === 'Tab') document.body.style.scrollBehavior = 'smooth';
-    });
-
-    // Make sure clicking nav links updates active state quickly
-    qsa('.nav-links a').forEach(a=>{
-      a.addEventListener('click', (ev)=>{
-        ev.preventDefault();
-        const h = a.getAttribute('href');
-        history.pushState(null,'',h);
-        showSectionFromHash();
-      });
-    });
-
-    // responsive small tweak: show nav on mobile by toggling
-    // (kept minimal to stay single-file)
   </script>
 </body>
 </html>
